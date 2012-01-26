@@ -1,0 +1,13 @@
+Set git to use meld as your external diff tool
+
+1. sudo apt-get install meld
+2. create ~/diff.py
+
+#!/usr/bin/python
+
+import sys
+import os
+
+os.system('meld "%s" "%s"' % (sys.argv[2], sys.argv[5]))
+
+3. git config --global diff.external ~/diff.py
